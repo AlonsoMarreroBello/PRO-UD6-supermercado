@@ -3,6 +3,7 @@ package net.salesianos.entities;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import net.salesianos.objects.Product;
 import net.salesianos.utils.Generator;
 
 public class Cashier {
@@ -21,8 +22,9 @@ public class Cashier {
   public static void addCustomer() {
     if (isOpen) {
       Customer customer = Generator.generateCustomer();
+      customer.fillShoppingCart();
       customerQueue.add(customer);
-      System.out.println("Cliente añadido a la cola: " + customer);
+      System.out.println("Cliente añadido a la cola: " + customer.getFirstName() + " " + customer.getLastName());
     } else {
       System.out.println("La caja está cerrada. No se pueden añadir clientes a la cola.");
     }
@@ -31,8 +33,15 @@ public class Cashier {
   public static void serveCustomer() {
     if (!customerQueue.isEmpty()) {
       Customer customer = customerQueue.remove();
-      System.out.println("Atendiendo al cliente: " + customer);
-      if (customer.stealProduct()) {
+      System.out.println("Atendiendo al cliente: " + customer.getFirstName() + " " + customer.getLastName());
+      if (customer.getFirstName().equals("Adri")) {
+        for (Product product : customer.getShoppingCart().getProducts()) {
+          if (product.getName().equals("Atun Calvo")) {
+            System.out.println(
+                "La compra del Atun Calvo es gratuita para este cliente, no tiene pelo, pero si atun de calidad.");
+          }
+        }
+      } else if (customer.stealProduct()) {
         System.out.println(
             "Cliente " + customer.getFirstName() + " " + customer.getLastName() + " ha sido expulsado por robo.");
       } else {
