@@ -14,7 +14,7 @@ public class Generator {
   private static final String[] LAST_NAMES = { "García", "Martínez", "Rodríguez", "López", "Hernández", "Sánchez",
       "Pérez", "González", "Gómez", "Fernández", "Díaz", "Alvarez", "Vásquez", "Romero", "Suárez", "Torres", "Ramírez",
       "Flores", "Benítez", "Acosta" };
-      private static final String[] PRODUCT_NAMES = { "Leche", "Pan", "Huevos", "Arroz", "Pasta", "Aceite", "Tomates",
+  private static final String[] PRODUCT_NAMES = { "Leche", "Pan", "Huevos", "Arroz", "Pasta", "Aceite", "Tomates",
       "Plátanos", "Manzanas", "Carne", "Atun Calvo", "Pescado" };
 
   private static final double MIN_PRICE = 1.0;

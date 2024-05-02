@@ -62,7 +62,7 @@ public class Customer {
     return "Cliente\n" +
         "===================================\n" +
         "* Nombre: " + firstName + " " + lastName + "\n" +
-        "* venezolano: " + (isVenezuelan ? " si " : " no " ) + "\n" + 
+        "* venezolano: " + (isVenezuelan ? " si " : " no ") + "\n" +
         "* Total de productos: " + shoppingCart.getTotalProducts() + "\n" +
         shoppingCart.toString() +
         "===================================\n";
