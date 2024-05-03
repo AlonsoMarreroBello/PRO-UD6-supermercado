@@ -63,7 +63,7 @@ public class Cashier {
     }
   }
 
-  public static void closeSupermarket() {
+  public static void closeCheckout() {
     if (isOpen) {
       if (customerQueue.isEmpty()) {
         isOpen = false;
